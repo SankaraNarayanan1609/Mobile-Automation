@@ -31,5 +31,5 @@ class longPressGesture extends BaseScript {
         }
 
 
-    }
+
 }
