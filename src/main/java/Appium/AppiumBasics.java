@@ -1,17 +1,11 @@
 package Appium;
+
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 public class AppiumBasics extends BaseScript {
     @Test
@@ -28,10 +22,6 @@ public class AppiumBasics extends BaseScript {
 
         driver.findElement(AppiumBy.className("android.widget.EditText")).sendKeys("vcidex209");
         driver.findElement(AppiumBy.id("android:id/button1")).click();
-
-       //Gestures
-
-
 
 
     }
