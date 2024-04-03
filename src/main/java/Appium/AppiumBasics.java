@@ -23,6 +23,5 @@ public class AppiumBasics extends BaseScript {
         driver.findElement(AppiumBy.className("android.widget.EditText")).sendKeys("vcidex209");
         driver.findElement(AppiumBy.id("android:id/button1")).click();
 
-
     }
 }

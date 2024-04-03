@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 import java.net.MalformedURLException;
 
 import java.net.URISyntaxException;
+import java.security.PublicKey;
 import java.time.Duration;
 
 public class BaseScript {
@@ -26,7 +27,7 @@ public class BaseScript {
             service.start();
 
             UiAutomator2Options options = new UiAutomator2Options();
-            options.setDeviceName("Pixel 8 Pro Android 15");
+            options.setDeviceName("Pixel 4A Android 14");
             options.setApp("C://Users//SankaraNarayanan//Appium Resources//resources//ApiDemos-debug.apk");
 
             //AndroidDriver, IOSDriver
@@ -40,13 +41,24 @@ public class BaseScript {
     public void LongPres(WebElement ele)
     {
         ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
-                ImmutableMap.of("elementId", ((RemoteWebElement) ele).getId(),
+                ImmutableMap.of("elementId", ((RemoteWebElement)ele).getId(),
                         "duration", 2000));
     }
 
+    //
+    public void scrollToEndAction() {
+        boolean canScrollMore;
+        do {
+            canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
+                    "left", 100, "top", 100, "width", 200, "height", 200,
+                    "direction", "down",
+                    "percent", 3.0
+            ));
+        } while (canScrollMore);
+    }
+
     @AfterClass
-    public void teerDown ()
-    {
+    public void tearDown(){
         driver.quit();
         service.stop();
     }
