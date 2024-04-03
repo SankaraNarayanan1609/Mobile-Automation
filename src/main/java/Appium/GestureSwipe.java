@@ -12,8 +12,7 @@
 
                 public class GestureSwipe extends BaseScript {
                     @Test
-                    public void Swipe() throws MalformedURLException, URISyntaxException, InterruptedException
-                    {
+                    public void Swipe() throws MalformedURLException, URISyntaxException, InterruptedException {
                         driver.findElement(AppiumBy.accessibilityId("Views")).click();
                         driver.findElement(AppiumBy.accessibilityId("Gallery")).click();
                         driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='1. Photos']")).click();
@@ -21,13 +20,11 @@
 
                         Assert.assertEquals(firstImage.getAttribute("focusable"), "true");
 
-                        //Swipe
-                        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
-                                "elementId", ((RemoteWebElement) firstImage).getId(),
-                                "direction", "left",
-                                "percent", 0.1
-                        ));
+                        //Swipe Action
+                        swipeAction(firstImage, "left");
 
                         Assert.assertEquals(firstImage.getAttribute("focusable"), "false");
                     }
+
                 }
+
