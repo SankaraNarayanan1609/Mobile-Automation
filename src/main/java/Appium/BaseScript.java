@@ -27,14 +27,15 @@ public class BaseScript {
             service.start();
 
             UiAutomator2Options options = new UiAutomator2Options();
-            options.setDeviceName("Pixel 4A Android 14");
-            options.setApp("C://Users//SankaraNarayanan//Appium Resources//resources//ApiDemos-debug.apk");
+            options.setDeviceName("Pixel 8 Android 15");
+//           options.setApp("C://Users//SankaraNarayanan//Appium Resources//resources//ApiDemos-debug.apk");
+            options.setApp("C://Users//SankaraNarayanan//IdeaProjects//QC//src//main//java//Resources//General-Store.apk");
 
             //AndroidDriver, IOSDriver
 
             URI appiumServerUri = new URI("http://127.0.0.1:4723");
             driver = new AndroidDriver(appiumServerUri.toURL(), options);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 
     }

@@ -21,7 +21,7 @@ public class AppiumBasics extends BaseScript {
         Assert.assertEquals(alertTitle,"WiFi settings");
 
         driver.findElement(AppiumBy.className("android.widget.EditText")).sendKeys("vcidex209");
-        driver.findElement(AppiumBy.id("android:id/button1")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@resource-id=\"android:id/button1\"]")).click();
 
     }
 }
